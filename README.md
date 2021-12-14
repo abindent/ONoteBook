@@ -4,11 +4,11 @@
 
 
     
-## ?? About Me
+## 🚀 About Me
 I'm a a beginner developer for Python and Javascript...
 
   
-## ???? Skills
+## 🕵️‍ Skills
 Javascript, HTML, CSS, Python...
 
 ## Author
@@ -16,14 +16,14 @@ Javascript, HTML, CSS, Python...
 - [@Think-With-Us (Abindent)](https://www.github.com/abindent)
 
 
-## ?? Latest React Project  
+## 🆕  Latest React Project  
 
 # ONoteBook
 Your notes safe on the cloud.
 ## How to access?
 Visit at https://onotebook.herokuapp.com/
 
-## ?? Links
+## 🔗 Links
 
 - [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sinchan-maitra-22a303217/)
 - [![reddit](https://img.shields.io/reddit/subreddit-subscribers/Abindent?style=social)](https://reddit.com/r/Abindent)
