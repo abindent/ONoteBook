@@ -18,7 +18,7 @@ const SignUp = (props) => {
         });
         const json = await response.json()
         console.log(json);
-        if (json.succes) {
+        if (json.success) {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             history.push("/notes");
@@ -33,7 +33,7 @@ const SignUp = (props) => {
     }
 
     return (
-        <div className="container">\
+        <div className="container">
             <br /><br /><br />
             <h1>SignUp</h1>
             <Form onSubmit={handleSubmit}>
