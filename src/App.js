@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { NavBar, Footer, Home, About, Alert, Login, SignUp, Main } from "./components/index"
+import MetaTags from "react-meta-tags"
+import NoteState from "./context/notes/NoteState"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [alert, setAlert] = useState(null)
+
+    const showAlert = (message, type)=>{
+        setAlert({
+            msg: message,
+            type: type
+        })
+        setTimeout(()=>{setAlert(null)}, 4500); 
+    }
+    return (
+        <>
+        <NoteState>
+            <Router> 
+            <NavBar/>
+            <Alert alert={alert} />
+            <div className="container">
+                <Switch>                   
+                    <Route path="/" exact><MetaTags><title>Home - O-NoteBook</title></MetaTags><Main /></Route>
+                    <Route path="/notes" exact><MetaTags><title>Notes - O-NoteBook</title></MetaTags><Home showAlert={showAlert} /></Route>
+                    <Route path="/about" exact><MetaTags><title>About - O-NoteBook</title></MetaTags><About /></Route>
+                    <Route path="/login" exact><MetaTags><title>Login - O-NoteBook</title></MetaTags><Login showAlert={showAlert} /></Route>
+                    <Route path="/signup" exact><MetaTags><title>Register - O-NoteBook</title></MetaTags><SignUp showAlert={showAlert}/></Route>
+                </Switch>
+                </div>
+                <Footer />
+            </Router>
+            </NoteState>
+        </>
+    );
 }
 
 export default App;
