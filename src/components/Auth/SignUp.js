@@ -9,7 +9,7 @@ const SignUp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, password } = credentials;
-        const response = await fetch("https://port-5000-onotebook-smsinchanmaitra2007760884.codeanyapp.com/api/auth/signup", {
+        const response = await fetch("https://onotebook-backened.herokuapp.com/api/auth/signup", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
