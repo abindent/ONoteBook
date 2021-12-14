@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from "../images/favicon.png"
+import {Link} from "react-router-dom"
 
 const Footer = () => {
     const style = {
@@ -16,8 +17,8 @@ const Footer = () => {
    </a>
 
    <ul className="nav col-md-4 justify-content-end text-decoration-none">
-<li className="nav-item"><a href="/" className="nav-link px-2 text-white-50">Home</a></li> 
-<li className="nav-item"><a href="/about" className="nav-link px-2 text-white-50">About</a></li>
+<li className="nav-item"><Link to="/" className="nav-link px-2 text-white-50">Home</Link></li> 
+<li className="nav-item"><Link to="/about" className="nav-link px-2 text-white-50">About</Link></li>
 
 <li className="nav-item"><a href="https://opensourcegames.w3spaces.com/#contact" className="nav-link px-2 text-white-50">Contact</a></li>
    </ul>

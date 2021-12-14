@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from "../images/favicon.png"
 import {Journal, Cloud, PencilSquare, Trash} from "react-bootstrap-icons";
+import {Link} from "react-router-dom"
 
 const Main = () => {
 
@@ -11,9 +12,9 @@ const Main = () => {
     <img className="d-block mx-auto mb-4" src={Logo} alt="" width="72" height="57" />
     <h1 className="display-5 fw-bold">O-NoteBook</h1>
     <div className="col-lg-6 mx-auto">
-      <p className="lead mb-4">Quickly save your <Journal />&nbsp;noteson on the <Cloud />&nbsp;clou, <PencilSquare />&nbsp;update and  <Trash />&nbsp;delete your notes online, with this powerfull tool O-NoteBook.</p>
+      <p className="lead mb-4">Quickly save your <Journal />&nbsp;notes on on the <Cloud />&nbsp;clou, <PencilSquare />&nbsp;update and  <Trash />&nbsp;delete your notes online, with this powerfull tool O-NoteBook.</p>
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a className="btn btn-primary btn-lg px-4 gap-3" href="/notes" >Start Writing Notes</a>
+        <Link className="btn btn-primary btn-lg px-4 gap-3" to="/notes" >Start Writing Notes</Link>
         <a className="btn btn-outline-secondary btn-lg px-4" href="https://github.com/abindent"><i className="bi bi-github"></i>&nbsp;Github</a>
       </div>
     </div>
@@ -44,8 +45,7 @@ const Main = () => {
             <p>OpenSource is the free source of HTML CSS and JAVA Script based Games.
             In this website you will get many interesting and exciting games. As a team of passionate gaming enthusiasts, OpenSource is dedicated to celebrating the gaming community. </p>
             <a href="https://osourcegames.firebaseapp.com" className="btn btn-primary icon-link">
-            <i className="bi bi-box-arrow-up-right"></i>&nbsp;Visit
-              
+            <i className="bi bi-box-arrow-up-right"></i>&nbsp;Visit       
             </a>
           </div>
           <div className="feature col">
@@ -54,10 +54,9 @@ const Main = () => {
           </div>
             <h2>Auth</h2>
             <p >Safe and secure signup, login , logout.<br />Very easy to authenticate.</p><br /><br /><br /><br />
-            <a href="/signup" className="btn btn-primary icon-link">
-            <i className="bi bi-person-plus-fill"></i>&nbsp;SingUp
-              
-            </a>
+            <Link to="/signup" className="btn btn-primary icon-link">
+            <i className="bi bi-person-plus-fill"></i>&nbsp;SingUp         
+            </Link>
           </div>
           <div className="feature col">
             <div className="feature-icon bg-primary bg-gradient">
@@ -68,10 +67,9 @@ const Main = () => {
             </div>
             <h2>Notes</h2>
             <p>Keep your notes saved and secured in the cloud with OpenSourceGame's new O-NoteBook. It is very easy and reliable, made using ReactJs, MongoDB, Express, NodeJs and Bootstrap.</p><br /><br />
-            <a href="/notes" className="btn btn-primary icon-link">
+            <Link to="/notes" className="btn btn-primary icon-link">
             <i className="bi bi-pen"></i>&nbsp;Start Writing Notes 
-             
-            </a>
+           </Link>
           </div>
         </div>
       </div>
