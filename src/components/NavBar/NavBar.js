@@ -40,8 +40,11 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname === "/about"?"active":""}`} to="/about"><i className="bi bi-building"></i>&nbsp;About</Link>
                             </li>
-                            <li className="nav-item">
+                           {/* <li className="nav-item">
                                 <a className="nav-link" href="https://opensourcegames.w3spaces.com/#contact" target="_blank" rel="noreferrer"><i className="bi bi-telephone-fill"></i>&nbsp;Contact</a>
+                            </li> */} 
+                         <li className="nav-item">
+                                <Link className={`nav-link ${location.pathname === "/contact"?"active":""}`}  to="/contact"><i className="bi bi-telephone-fill"></i>&nbsp;Contact</Link>
                             </li>
                         </ul>
                         {!localStorage.getItem('token')? <><Link to="/signup"><Button variant="success"><i className="bi bi-person-plus-fill"></i>&nbsp;Signup</Button></Link> 

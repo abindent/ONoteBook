@@ -6,3 +6,4 @@ export { default as Alert } from "./Alert/Alert";
 export { default as Login } from "./Auth/Login";
 export { default as SignUp } from "./Auth/SignUp";
 export { default as Main } from "./Main/Main";
+export { default as Contact } from "./Contact/Contact";
