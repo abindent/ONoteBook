@@ -1,9 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext} from 'react'
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { Button } from 'react-bootstrap';
-
+import userContext from "../../context/users/userContext"
 
 const NavBar = () => {
+    const context = useContext(userContext);
+    const { user, getUser } = context
     let location = useLocation()
     useEffect(() => {
         
@@ -13,6 +15,11 @@ const NavBar = () => {
     const handleLogout = ()=>{
         localStorage.removeItem('token');
         history.push("/login")
+    }
+ 
+    if (localStorage.getItem('token')) {
+        getUser()
+        //eslint-disable-next-line
     }
     return (
         <>
@@ -38,7 +45,7 @@ const NavBar = () => {
                             </li>
                         </ul>
                         {!localStorage.getItem('token')? <><Link to="/signup"><Button variant="success"><i className="bi bi-person-plus-fill"></i>&nbsp;Signup</Button></Link> 
-                           <Link to="/login"><Button variant="success" className="mx-2"><i className="bi bi-box-arrow-in-right"></i>&nbsp;Login</Button></Link> </>: <Button variant="success" onClick={handleLogout}><i className="bi bi-box-arrow-in-left"></i>&nbsp;Log Out</Button>
+                           <Link to="/login"><Button variant="success" className="mx-2"><i className="bi bi-box-arrow-in-right"></i>&nbsp;Login</Button></Link> </>: <><p className="text-white mt-3 mx-2">Welcome {user.name}</p>&nbsp;<Button variant="success" onClick={handleLogout}><i className="bi bi-box-arrow-in-left"></i>&nbsp;Log Out</Button></>
     }
                             
                     </div>

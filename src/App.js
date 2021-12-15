@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { NavBar, Footer, Home, About, Alert, Login, SignUp, Main } from "./components/index"
 import MetaTags from "react-meta-tags"
 import NoteState from "./context/notes/NoteState"
+import UserState from "./context/users/UserState"
 
 function App() {
     const [alert, setAlert] = useState(null)
@@ -17,6 +18,7 @@ function App() {
     return (
         <>
         <NoteState>
+         <UserState>
             <Router> 
             <NavBar/>
             <Alert alert={alert} />
@@ -31,6 +33,7 @@ function App() {
                 </div>
                 <Footer />
             </Router>
+          </UserState>
             </NoteState>
         </>
     );
