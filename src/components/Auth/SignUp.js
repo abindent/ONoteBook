@@ -31,6 +31,10 @@ const SignUp = (props) => {
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
+   
+  if(localStorage.getItem('token')){
+     history.push("/")
+    }
 
     return (
         <div className="container">

@@ -31,6 +31,9 @@ const Login = (props) => {
     const onChange = (e)=>{
         setCredentials({...credentials, [e.target.name]: e.target.value})
     }
+    if(localStorage.getItem('token')){
+     history.push("/notes")
+    }
 
     return (
         <div>
