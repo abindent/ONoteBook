@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import HttpsRedirect from 'react-https-redirect';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { NavBar, Footer, Home, About, Alert, Login, SignUp, Main, Contact } from "./components/index"
 import MetaTags from "react-meta-tags"
@@ -16,7 +17,7 @@ function App() {
         setTimeout(()=>{setAlert(null)}, 4500); 
     }
     return (
-        <>
+      <HttpsRedirect>
         <NoteState>
          <UserState>
             <Router> 
@@ -36,7 +37,7 @@ function App() {
             </Router>
           </UserState>
             </NoteState>
-        </>
+        </HttpsRedirect>
     );
 }
 
