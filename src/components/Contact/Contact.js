@@ -4,9 +4,9 @@ import { Form, Button } from "react-bootstrap"
 import Swal from "sweetalert2";
 
 const Contact = () => {
-    init("user_CoAIQtaI8r3AdZh3ZIYAw");
-    const SERVICE_ID = process.env.SERVICE_ID;
-    const TEMPLATE_ID = process.env.TEMPLATE_ID;
+    init(process.env.USER_ID);
+    const SERVICE_ID = "service_kgmka0a";
+    const TEMPLATE_ID = "template_ncnqz1f";
     const USER_ID = process.env.USER_ID;
     const handleOnSubmit = (e) => {
         e.preventDefault();
