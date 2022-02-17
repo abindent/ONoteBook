@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap"
 import Swal from "sweetalert2";
 import dotenv from 'dotenv'
 
-# Configuring ENV
+// Configuring ENV
 dotenv.config()
 
 const Contact = () => {
