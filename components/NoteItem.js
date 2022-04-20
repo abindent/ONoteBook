@@ -5,16 +5,15 @@ import {Card } from "flowbite-react";
 
 const NoteItem = (props)=>{    
    const { note, deleteNote, showAlert } = props;
-   console.log(note)
    function createMarkup(c) {
       return {__html: c};
     }
    
    return ( 
-<div className="grid grid-cols-3 gap-4 py-3 ml-2">
-    <Card className="max-w-sm mb-2">
+<div className="py-3 ml-2">
+    <Card className="max-w-sm sm:max-w-md mb-2">
     <h5 className="flex text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-   {note.title}  <Trash className="cursor-pointer mt-2 text-2xl md:text-sm font-semibold ml-3" onClick={()=>{deleteNote(note._id); showAlert("Note Deleted Successfully", "success")}}/><Link href={`note/${note._id}`}><a><PencilSquare className="cursor-pointer mt-2 text-2xl md:text-sm font-semibold mx-2" /></a></Link>
+   {note.title}  <Trash className="cursor-pointer mt-2 text-2xl md:text-sm font-semibold ml-3" onClick={()=>{deleteNote(note._id); showAlert("Note Deleted Successfully", "success")}}/><Link href={`note/edit?id=${note._id}`}><a><PencilSquare className="cursor-pointer mt-2 text-2xl md:text-sm font-semibold mx-2" /></a></Link>
    </h5>
       <p className="text-sm tracking-tight text-gray-400 dark:text-[silver]">
     Tags: {note.tag}

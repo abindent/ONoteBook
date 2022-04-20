@@ -76,12 +76,15 @@ export default function Notes({ showAlert }){
       
    </Head>
    
+   
    <NoteAdd addNote={addNote} showAlert={showAlert}/>
 
   {notes.length===0 ? <p className="text-center text-black dark:text-[silver]">No notes to display</p> : <></>}
+<div className="grid md:grid-cols-4 md:gap-5 sm:grid-cols-1 sm:gap-2">
   {notes.map((e) => {
                return <NoteItem key={e._id} note={e}  deleteNote={deleteNote} showAlert={showAlert}/>
                 })}
+   </div>
 
 </div>
  )

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from 'next/router';
-import { Label, TextInput, Textarea, Button } from "flowbite-react";
+import { Card, Label, TextInput, Textarea, Button } from "flowbite-react";
 import { PencilSquare } from "react-bootstrap-icons";
 
 const Note = ({ showAlert })=>{
@@ -9,6 +9,7 @@ const Note = ({ showAlert })=>{
   const router = useRouter()
   const [notes, setNotes] = useState([])
   const [note, setNote] = useState({title: "", description: "", tag: ""}) 
+  const { id } = router.query
   function createMarkup(c) {
       return {__html: c};
     }
@@ -16,7 +17,7 @@ const Note = ({ showAlert })=>{
       // Edit a Note
   const editNote = async (title, description, tag) => {
       // API Call 
-      const response = await fetch(`${host}/api/notes/update/${router.query}`, {
+      const response = await fetch(`${host}/api/notes/update/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ const Note = ({ showAlert })=>{
 // Get all Notes
   const getNotes = async () => {
       // API Call 
-      const response = await fetch(`${host}/api/notes/note/${router.query}`, {
+      const response = await fetch(`${host}/api/notes/note/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -73,11 +74,10 @@ const Note = ({ showAlert })=>{
        <link rel="icon" href="/favicon.png" />
       
    </Head>
-      <h2 className="text-2xl font-bold text-blue-700 dark:text-[silver] text-center">{notes.title}</h2>
-     <div className="py-3 px-3" dangerouslySetInnerHTML={createMarkup(notes.description)}></div>
+      
 
 <form className="flex flex-col gap-4 px-4 py-4">
-    <h2 className="text-2xl text-black dark:text-[silver] font-bold text-center">Add a Note</h2>
+    <h2 className="text-2xl text-black dark:text-[silver] font-bold text-center">Edit the Note</h2>
     <div>
       <Label
         className="mb-2 block"
@@ -133,6 +133,14 @@ const Note = ({ showAlert })=>{
    </div>
       <Button type="submit" onClick={handleClick} disabled={note.title.length<3 || note.description.length<5}><PencilSquare className="text-md mr-2"/>Edit Note</Button>
     </form>
+   <Card className="py-3 px-2">
+    <h5 className="flex text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+   {notes.title}</h5>
+      <p className="text-sm tracking-tight text-gray-400 dark:text-[silver]">
+    <span className="underline">Tags:</span> {notes.tag}
+   </p>
+  <b className="text-black dark:text-white underline">Body:</b><div dangerouslySetInnerHTML={createMarkup(notes.description)}></div>
+  </Card>
    </div>
   )
 }

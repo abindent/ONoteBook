@@ -16,7 +16,8 @@ export default function Home() {
              <title>ONoteBook - Your notes safe on the cloud.</title>
         
             <meta name="description" content="ONoteBook - Your notes safe on the cloud." />
-                        <link rel="icon" href="/favicon.png" />
+ 
+            <link rel="icon" href="/favicon.png" />
       
          </Head>
 
@@ -26,10 +27,10 @@ export default function Home() {
           <img className="mb-10 w-24 rounded object-cover object-center" alt="favicon" src="/favicon.png" />
           <div className="w-full text-center">
             <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl ">ONoteBook</h1>
-            <p className="mb-8 justify-center flex inline text-black dark:text-[silver]">Quickly save your&nbsp;<Journal className="mt-1"/>&nbsp;notes on the&nbsp;<Cloud className="mt-1"/>&nbsp;cloud, &nbsp;<PencilSquare className="mt-1"/>&nbsp;update and &nbsp;<Trash className="mt-1"/>&nbsp;delete your notes online, with this powerfull tool O-NoteBook.</p>
+            <p className="mb-8 text-black dark:text-[silver] sm:text-sm md:text-sm text-lg"><span className="md:flex md:justify-center md:align-center inline-block">Quickly save your<Journal className="w-3 sm:w-[34px] mt-1 ml-2 mr-2"/>notes on the<Cloud className="w-3 sm:w-[34px] mt-1 ml-2 mr-2"/>cloud, <PencilSquare className="w-3 sm:w-[34px] mt-1 ml-2 mr-2"/>&nbsp;update and &nbsp;<Trash className="w-3 sm:w-[34px] mt-1 ml-2 mr-2"/>delete your notes online, with this powerfull tool O-NoteBook.</span></p>
             <div className="flex justify-center">
-              <Link href={"/notes"}><a><button className="inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg text-white hover:bg-indigo-600 focus:outline-none"><PencilSquare className="mt-2"/>&nbsp;Start Writing Notes</button></a></Link>
-              <Link href={"https://github.com/abindent/ONoteBook"}><a><button className="ml-4 inline-flex rounded border-0 bg-gray-800 py-2 px-6 text-lg text-white dark:text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none"><Github className="mt-1"/>&nbsp;Github</button></a></Link>
+              <Link href={"/notes"}><a><button className="inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg sm:text-md text-white hover:bg-indigo-600 focus:outline-none"><PencilSquare className="mt-2"/>&nbsp;Start Writing Notes</button></a></Link>
+              <Link href={"https://github.com/abindent/ONoteBook"}><a><button className="ml-4 inline-flex rounded border-0 bg-gray-800 py-2 px-6 text-lg sm:text-md text-white dark:text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none"><Github className="mt-1"/>&nbsp;Github</button></a></Link>
             </div>
           </div>
         </div>
